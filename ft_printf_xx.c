@@ -1,30 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf_p.c                                      :+:      :+:    :+:   */
+/*   ft_printf_X.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: roda-min <roda-min@student.42lisboa.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/12/27 11:37:00 by roda-min          #+#    #+#             */
-/*   Updated: 2022/12/27 12:46:09 by roda-min         ###   ########.fr       */
+/*   Created: 2022/12/27 11:39:05 by roda-min          #+#    #+#             */
+/*   Updated: 2022/12/27 14:05:15 by roda-min         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-// %p The void * pointer argument has to be printed in hexadecimal format.
+// %X Prints a number in hexadecimal (base 16) uppercase format.
 
-int	ft_printf_p(unsigned long int c)
+int	ft_printf_xx(unsigned int nb)
 {
 	int	n;
 
 	n = 0;
-	if (!c)
-	{
-		n += write (1, "(nil)", 5);
-		return (n);
-	}
-	ft_printf_c('0');
-	ft_printf_c('x');
-	return (ft_putnbr_n(c, "0123456789abcdef") + 2);
+	n += ft_putnbr_n(nb, "0123456789ABCDEF");
+	return (n);
 }
